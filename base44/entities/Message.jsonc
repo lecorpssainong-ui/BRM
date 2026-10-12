@@ -1,0 +1,15 @@
+{
+  "name": "Message",
+  "fields": {
+    "client_key": { "type": "string", "required": true },
+    "client_name": { "type": "string" },
+    "sender": { "type": "string", "enum": ["client", "staff"], "required": true },
+    "text": { "type": "string" },
+    "attachment_url": { "type": "string" },
+    "attachment_type": { "type": "string", "enum": ["image", "video", "file", "location", "audio"] },
+    "attachment_name": { "type": "string" },
+    "duration": { "type": "number" },
+    "edited": { "type": "boolean", "default": false },
+    "read": { "type": "boolean", "default": false }
+  }
+}

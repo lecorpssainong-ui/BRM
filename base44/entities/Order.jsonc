@@ -1,0 +1,18 @@
+{
+  "name": "Order",
+  "fields": {
+    "client_key": { "type": "string", "required": true },
+    "client_name": { "type": "string" },
+    "client_phone": { "type": "string" },
+    "items": { "type": "array" },
+    "total": { "type": "number", "required": true },
+    "payment_method": { "type": "string", "enum": ["mtn", "moov", "celtiis", "card"], "default": "mtn" },
+    "transaction_ref": { "type": "string" },
+    "payer_phone": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "paid", "delivered", "cancelled"],
+      "default": "pending"
+    }
+  }
+}

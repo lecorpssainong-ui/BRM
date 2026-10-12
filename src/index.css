@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cacao: 42 28 21;
+    --sand: 245 238 230;
+    --gold: 184 134 75;
+    --sage: 125 139 110;
+    --clay: 196 112 79;
+    --radius: 1rem;
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* ── Thème Océan ── */
+  [data-theme="ocean"] {
+    --cacao: 14 34 51;
+    --sand: 233 242 247;
+    --gold: 74 152 186;
+    --sage: 96 143 128;
+    --clay: 190 118 96;
+  }
+
+  /* ── Thème Forêt ── */
+  [data-theme="foret"] {
+    --cacao: 22 38 26;
+    --sand: 235 243 234;
+    --gold: 122 158 92;
+    --sage: 90 122 92;
+    --clay: 176 130 90;
+  }
+
+  /* ── Thème Royal ── */
+  [data-theme="royal"] {
+    --cacao: 32 24 46;
+    --sand: 243 238 250;
+    --gold: 168 132 214;
+    --sage: 120 130 170;
+    --clay: 196 120 150;
+  }
+
+  /* ── Thème Ambre ── */
+  [data-theme="ambre"] {
+    --cacao: 45 26 18;
+    --sand: 250 240 228;
+    --gold: 214 138 60;
+    --sage: 150 130 100;
+    --clay: 205 100 70;
+  }
+
+  * {
+    border-color: rgba(42, 28, 21, 0.1);
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: rgb(var(--sand));
+    color: rgb(var(--cacao));
+    font-family: var(--font-body);
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+}
+
+@theme {
+  --color-cacao: rgb(var(--cacao) / <alpha-value>);
+  --color-sand: rgb(var(--sand) / <alpha-value>);
+  --color-gold: rgb(var(--gold) / <alpha-value>);
+  --color-sage: rgb(var(--sage) / <alpha-value>);
+  --color-clay: rgb(var(--clay) / <alpha-value>);
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── Classes utilitaires maison BRM ── */
+.glass {
+  background-color: rgb(var(--sand) / 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-dark {
+  background-color: rgb(var(--cacao) / 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: rgb(var(--gold));
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(var(--cacao));
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 14px -2px rgba(184, 134, 75, 0.35);
+  cursor: pointer;
+  border: none;
+}
+.btn-gold:hover {
+  background-color: #c9985c;
+  transform: translateY(-1px);
+}
+.btn-gold:active {
+  transform: scale(0.97);
+}
+.btn-gold:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: rgb(var(--cacao));
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(var(--sand));
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  border: none;
+}
+.btn-dark:hover {
+  background-color: rgba(42, 28, 21, 0.9);
+}
+.btn-dark:active {
+  transform: scale(0.97);
+}
+.btn-dark:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 238, 230, 0.3);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--sand));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  background-color: rgba(245, 238, 230, 0.1);
+}
+.btn-ghost:active {
+  transform: scale(0.97);
+}
+
+.btn-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: rgba(42, 28, 21, 0.06);
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--cacao));
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  border: none;
+}
+.btn-soft:hover {
+  background-color: rgba(42, 28, 21, 0.12);
+}
+.btn-soft:active {
+  transform: scale(0.97);
+}
+.btn-soft:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-soft {
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 40px -20px rgba(42, 28, 21, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.field {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(42, 28, 21, 0.12);
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: rgb(var(--cacao));
+  outline: none;
+  transition: all 0.2s ease;
+}
+.field:focus {
+  border-color: rgb(var(--gold));
+  box-shadow: 0 0 0 3px rgba(184, 134, 75, 0.2);
+}
+.field::placeholder {
+  color: rgba(42, 28, 21, 0.4);
+}
+
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgb(var(--gold));
+  font-weight: 600;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* ── Disposition Réactive en Grille du Cockpit (2, 3, 4 et 5 colonnes) ── */
+.cockpit-grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 600px) {
+  .cockpit-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.cockpit-grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 580px) {
+  .cockpit-grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 880px) {
+  .cockpit-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.cockpit-grid-cols-4 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 540px) {
+  .cockpit-grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 800px) {
+  .cockpit-grid-cols-4 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1080px) {
+  .cockpit-grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.cockpit-grid-cols-5 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 480px) {
+  .cockpit-grid-cols-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 720px) {
+  .cockpit-grid-cols-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 980px) {
+  .cockpit-grid-cols-5 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1240px) {
+  .cockpit-grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

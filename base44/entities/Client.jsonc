@@ -1,0 +1,10 @@
+{
+  "name": "Client",
+  "fields": {
+    "client_key": { "type": "string", "required": true },
+    "name": { "type": "string", "required": true },
+    "phone": { "type": "string" },
+    "blocked": { "type": "boolean", "default": false },
+    "last_seen": { "type": "datetime" }
+  }
+}

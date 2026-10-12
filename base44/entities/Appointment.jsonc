@@ -1,0 +1,17 @@
+{
+  "name": "Appointment",
+  "fields": {
+    "client_key": { "type": "string", "required": true },
+    "client_name": { "type": "string" },
+    "client_phone": { "type": "string" },
+    "massage_name": { "type": "string", "required": true },
+    "date": { "type": "datetime", "required": true },
+    "notes": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "accepted", "refused", "modified", "cancelled"],
+      "default": "pending"
+    },
+    "staff_note": { "type": "string" }
+  }
+}

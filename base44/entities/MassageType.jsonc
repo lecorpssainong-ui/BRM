@@ -1,0 +1,18 @@
+{
+  "name": "MassageType",
+  "fields": {
+    "name": { "type": "string", "required": true },
+    "tagline": { "type": "string" },
+    "description": { "type": "string" },
+    "role": { "type": "string" },
+    "objective": { "type": "string" },
+    "benefits": { "type": "array" },
+    "duration_min": { "type": "number", "default": 60 },
+    "price": { "type": "number", "default": 0 },
+    "image_url": { "type": "string" },
+    "likes": { "type": "number", "default": 0 },
+    "order": { "type": "number", "default": 0 },
+    "bulk_min_qty": { "type": "number", "default": 10 },
+    "bulk_discount_percent": { "type": "number", "default": 10 }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Bénin Réflexologie Massage",
+  "description": "Application mobile-first de bien-être au Bénin : soins, messagerie, boutique, anamnèse et gestion intégrale.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
